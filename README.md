@@ -21,3 +21,14 @@ width="300" height="150">
 
 ### :arrow_down_small: Performance Evaluation <br>
 一般我們在績效衡量時，只要發生任何error都會给訂一個’相同’的懲罰(cost)， 而在二元分類可能的error如圖1左表的confusion matrix所示:
+
+
+<br>
+<div align=center>
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png" 圖1
+width="360" height="90">
+</div>
+<br>
+
+
+
