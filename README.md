@@ -25,7 +25,7 @@ width="300" height="150">
 
 <br>
 <div align=center>
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png" 圖1
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png 圖1" 
 width="360" height="90">
 </div>
 <br>
