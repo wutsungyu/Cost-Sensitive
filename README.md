@@ -132,3 +132,14 @@ width="360" height="150">
 
 由Q1 到A1的過程中，可以得知加入懲罰(cost)較為合理，因此當error背後的重要性不同時，較推薦使用Class-Weighted Cost-Sensitive Binary Classiﬁcation，而其中in-sample error、out-of-sample error 的計算方法如 圖6所示:
 
+(
+以下範例是以supermarket案例的cost martix做說明  
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%965.png" 
+width="150" height="140">
+圖5
+</sub>
+</div>
+<br>  )
