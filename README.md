@@ -94,7 +94,6 @@ width="360" height="90">
 :bulb: __A1  :  視不同的情況給予不同的error不同的懲罰(cost)較合理__ <br>     
 ---------------------------------------------------------------------------------------------------
 
----
 
 ## :arrow_down_small: “Regular” Binary Classiﬁcation <br>
 在機器學習裡面,有一個很重要的概念,叫做training 和 testing
