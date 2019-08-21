@@ -23,12 +23,15 @@ width="300" height="150">
 
 <br>
 <div align=center>
+<sub> 
 <img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png " 
 width="360" height="90">
+圖1 
+</sub>
 </div>
 <br>                                                                            
                                                                       
-<sub>  
- 圖1 
-</sub>
+ 
+ 
+
 
