@@ -38,7 +38,7 @@ width="360" height="90">
 <br>
 
 :bulb: __Q1  :  但難道不同的error都給同樣懲罰(cost)是合理的嗎???__ <br>     
-
+---------------------------------------------------------------------------------------------------
 
 
 
@@ -88,5 +88,29 @@ width="360" height="90">
 
 由反例2可知
 以客戶的感覺來看 當指紋辨識機犯下False accept error會比犯下False reject error來的嚴重，因此可以看到圖3的右表，此時會給予較不想發生的False accept error 一個較高的懲罰(cost)1000
+
+<br>
+
+:bulb: __A1  :  視不同的情況給予不同的error不同的懲罰(cost)較合理__ <br>     
+---------------------------------------------------------------------------------------------------
+
+## :arrow_down_small: “Regular” Binary Classiﬁcation <br>
+在機器學習裡面,有一個很重要的概念,叫做training 和 testing
+
+training:  我們利用已有的資料來訓練模型,進而得到目標函數
+testing:    把training 後的目標函數, 拿去應用在現實例子中
+
+其中training 會得到 in-sample error  ;   testing 會得到out-sample error
+
+舉例來說,我們想利用病人的檢查結果來預測癌症, 於是我們會先把手上有的資料拿來訓練模型(training); 之後訓練好再把它丟出來給大家拿來預測(testing)
+
+
+
+
+
+
+
+
+然而Regular Binary Classiﬁcation 中 in-sample error與out-of-sample error的計算方式如圖4 :
 
 
