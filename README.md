@@ -30,7 +30,20 @@ width="360" height="90">
 </sub>
 </div>
 <br>                                                                            
-                                                                      
+
+
+
+
+
+<br>
+
+:bulb: __Q1  :  但難道不同的error都給同樣懲罰(cost)是合理的嗎???__ <br>     
+
+
+
+
+                              
+                         
 ### :arrow_down_small: Fingerprint Veriﬁcation for Supermarket  (反例1) <br>
 此例子是將指紋辨識系統用於超級市場的客戶身分辨識，會將客戶分成忠誠(+1)或非忠誠(-1)的類別，並且會給予忠誠的客戶折扣 
 
