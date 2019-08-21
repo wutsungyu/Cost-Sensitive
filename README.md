@@ -121,3 +121,14 @@ width="360" height="150">
 </div>
 <br>  
 
+由上述公式可知:
+1.)利用現有的資料作訓練時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總除上樣本數，即為In sample error的計算方式
+2.)利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總，即為out-of sample error的計算方式(此時不用除N因為……?
+????????????????)
+
+
+## :arrow_down_small: “Class-Weighted Cost-Sensitive” Binary Classiﬁcation <br> 
+**(Class-Weighted : 不同的y 下所產生的weight是不同的)**
+
+由Q1 到A1的過程中，可以得知加入懲罰(cost)較為合理，因此當error背後的重要性不同時，較推薦使用Class-Weighted Cost-Sensitive Binary Classiﬁcation，而其中in-sample error、out-of-sample error 的計算方法如 圖6所示:
+
