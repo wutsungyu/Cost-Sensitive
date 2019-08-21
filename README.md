@@ -26,7 +26,9 @@ width="300" height="150">
 <img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png " 
 width="360" height="90">
 </div>
-<br>                                                                             圖1
+<br>                                                                            
                                                                       
-
+<sub>  
+ 圖1 
+</sub>
 
