@@ -11,9 +11,10 @@
 此時有兩個不同的指紋登入，一個是你(正確使用者)的指紋，另一個為他人(侵入者)的指紋
 而指紋辨識系統需要判斷 當有一個指紋輸入時 該指紋為正確使用者的指紋或是侵入者的指紋 該種判斷(分類)方式即為Binary Classiﬁcation
 
+
 <br>
 <div align=center>
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png"
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%96.png"
 width="300" height="150">
 </div>
 <br>
