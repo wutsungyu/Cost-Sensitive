@@ -1,4 +1,4 @@
-# cost-sensitive
+# Cost-Sensitive
 *[POLab](http://polab.imis.ncku.edu.tw/)* <br>
 
 <br>
