@@ -94,6 +94,8 @@ width="360" height="90">
 :bulb: __A1  :  視不同的情況給予不同的error不同的懲罰(cost)較合理__ <br>     
 ---------------------------------------------------------------------------------------------------
 
+---
+
 ## :arrow_down_small: “Regular” Binary Classiﬁcation <br>
 在機器學習裡面,有一個很重要的概念,叫做training 和 testing
 
@@ -104,13 +106,18 @@ testing:    把training 後的目標函數, 拿去應用在現實例子中
 
 舉例來說,我們想利用病人的檢查結果來預測癌症, 於是我們會先把手上有的資料拿來訓練模型(training); 之後訓練好再把它丟出來給大家拿來預測(testing)
 
-
-
-
-
-
-
+---
 
 然而Regular Binary Classiﬁcation 中 in-sample error與out-of-sample error的計算方式如圖4 :
-
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%964.png" 
+width="360" height="150">
+圖4 
+  
+  []布林向量 : 當符合括號中的條件布林向量值為1，反之則為0
+</sub>
+</div>
+<br>  
 
