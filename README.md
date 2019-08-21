@@ -1,2 +1,2 @@
 # cost-sensitive
-## :black_nib: GA 背景 (Background)
+## :black_nib: Cost-Sensitive Binary Classiﬁcation
