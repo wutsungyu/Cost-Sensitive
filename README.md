@@ -382,3 +382,75 @@ width="350" height="100">
 若W- × p( X )大於W+ ×  (1-p( X) )則將該樣本分在+1類，反之則分在-1類
 
 ### :arrow_down_small:Key Idea: Approximate Bayes-Optimal Decision <br>
+
+經過推倒化簡後可以得到一個用來判斷某example該分類在+1or-1類的式子如圖17所示
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9617.0.png" 
+width="490" height="100">
+圖17
+</sub>
+</div>
+<br>  
+
+<br>
+<div align=center>
+<sub> 
+(
+  <img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9617.1.png" 
+width="100" height="70">超市  
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9617.2.png" 
+width="100" height="70">CIA
+)
+</sub>
+</div>
+<br>  
+
+以supermarket為例子，將w+ w-的真實值帶入公式後可以得到P(x) > 1/11 ，其意思為當某個樣本利用logistic regression, Naïve Bayes, ...等方法估計出來分類為+的機率若大於 1/(11 ) 則將其分類為+1類別
+
+---
+
+Approximate Bayes-Optimal Decision (ABOD) 方法的主要步驟如圖18所示 
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%9618.png" 
+width="420" height="100">
+圖18
+</sub>
+</div>
+<br>
+
+Setep1
+\
+利用自己習慣的演算法(logistic regression, Naïve Bayes, ...)求出p(x) 、1-p(x)，並用它們估計P( -1 | X )、P( +1 |1 X )
+\
+Setep2
+\
+利用approximately good分類器g(x)進行分類，其中根據不同特性題目，分類器g(x)的門檻 (W-)/(W+ + W-) 會有所改變
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
