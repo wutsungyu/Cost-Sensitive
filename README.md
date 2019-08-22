@@ -12,7 +12,7 @@
 而指紋辨識系統需要判斷 當有一個指紋輸入時 該指紋為正確使用者的指紋或是侵入者的指紋 該種判斷(分類)方式即為Binary Classiﬁcation
 
 <br>
-<div align=right>
+<div align=center>
 <img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%96.png"
 width="300" height="150">
 </div>
@@ -121,7 +121,9 @@ width="360" height="150">
 <br>  
 
 由上述公式可知:
+\
 1.)利用現有的資料作訓練時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總除上樣本數，即為In sample error的計算方式
+\
 2.)利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總，即為out-of sample error的計算方式(此時不用除N因為……?
 ????????????????)
 
@@ -142,3 +144,55 @@ width="150" height="140">
 </sub>
 </div>
 <br> 
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%966.png" 
+width="350" height="200">
+圖6 
+  
+     Positive class : cost=10    ；   negative class : cost=1
+</sub>
+</div>
+<br>  
+
+由上述公式可知:
+\
+1.)	supermarket案例中，當實際值不等於預測值時，會有不同的cost，因此將所有不相等情況的cost加總並除上樣本數，即為In sample error的計算方式( Eg  y=+1  h(x)=-1  ； cost = 10 )
+\
+2.)	supermarket案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，會有不同的cost，把所有不相等情況的cost加總，即為out-of sample error的計算方式 (此時不用除N因為……?
+
+????????????????)
+
+
+## :arrow_down_small: Class-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下: <br>
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%967.png" 
+width="420" height="120">
+圖7
+  
+     Positive class : cost=10    ；   negative class : cost=1
+</sub>
+</div>
+<br>  
+投入N的樣本，每個樣本為一個input Xn 及 label  Yn  
+並且給予error 兩種不同的權重 W+、W- 如圖7 右表的cost matrix 所示:
+
+---
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%968.png" 
+width="420" height="120">
+圖8      
+</sub>
+</div>
+<br>  
+我們希望利用cost matrix這些額外資訊，在未知的資料得到一個很低的out-of-sample error，同時使的分類器g(x)在將所有樣本分類時可以獲得最小的cost，因而做出最佳決策
+\
+※Regular Binary Classiﬁcation是Class-Weighted Cost-Sensitive Binary Classiﬁcation的特例 (W+ W-為1時)
+
