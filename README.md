@@ -339,10 +339,10 @@ P( -1 | X ) : 真實y為-1類別，其在某個example下所可能發生的機�
 因此W- 與 P( -1 | X ) 相乘 即為expected error for predicting +1 on x
 
 <br>
-<div align=right>
+<div align=center>
 <sub> 
 <img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9614.1.png" 
-width="120" height="90">
+width="130" height="100">
 </sub>
 </div>
 <br>
