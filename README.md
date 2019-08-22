@@ -12,7 +12,7 @@
 而指紋辨識系統需要判斷 當有一個指紋輸入時 該指紋為正確使用者的指紋或是侵入者的指紋 該種判斷(分類)方式即為Binary Classiﬁcation
 
 <br>
-<div align=center>
+<div align=right>
 <img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%96.png"
 width="300" height="150">
 </div>
