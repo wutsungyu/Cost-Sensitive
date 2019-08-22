@@ -463,12 +463,108 @@ width="680" height="600">
 2.)	restricted : 我們會需要已知的W+W-來計算threshold，因此會需要一張完整的cost matrix 表
 
 
+## :black_nib: Non-Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation
+### :arrow_down_small:Key Idea: Example Weight = Copying <br>
+Non-Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation的目標也與前面介紹的分類法都一樣，希望分類器g(x)將所有未知example分類後可以得到一個最小的cost
 
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9623.png" 
+width="420" height="110">
+  圖23
+</sub>
+</div>
+<br>
 
+---
 
+在前面提到的Class-Weighted Cost-Sensitive Binary Classiﬁcation、Example-Weighted Cost-Sensitive Binary Classiﬁcation、ABOD等方法，都是當example預測錯誤時會給予一個懲罰(cost)或說權重(W)，如圖24左邊，但其實換個角度想當有一個example的權重為W時，其意思等同於copy同個example W 次，並且給予每個example 的cost為1，如圖24右邊，而其中copy方式可以採用oversampling
 
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9624.png" 
+width="390" height="100">
+  圖24
+</sub>
+</div>
+<br>
 
+---
 
+用前面提到的Example-Weighted Classiﬁcation的例子來輔助說明，一開始的original problem如圖25邊，同之前說明不再贅述，此時有五個example(x1 ~x5)且分類錯誤的W已經知道了，接著可以利用oversampling(不一定是oversampling，undersampling等方法看題目要求，下方會再做介紹)的方法將題目轉換為equivalent problem，如圖25右邊的形式。以X3 example為例，original problem為(X3、+1、100)，經過轉換後也就是將X3 example複製100次並給予每個example的W為1，可以看到變成圖25右邊的形式，接著再用equivalent problem下被轉換的example(很多個w為1的樣本)去訓練出一個好的二元分類器，而訓練的方式可以用SVM、NNet、Adaboost…等等的方法
+\
+- __題外話__
+\
+{{{copy的方式較不推薦，因這樣直接copy可能會導致不符合iid條件及線性回歸假設，換個方式想若將此問題轉制為電腦讀得懂的語言，有可能會發生線性重合的問題(很多個column對應到的值都一樣)}}}
 
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9625.png" 
+width="390" height="200">
+  圖25
+</sub>
+</div>
+<br>
 
+※Non-Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation中有個方法叫Cost-Proportionate Example Weighting(接下來要介紹)，而以上介紹的技巧(copy)則是Cost-Proportionate Example Weighting 的某個方法
 
+### :arrow_down_small:Cost-Proportionate Example Weighting(CPEW) <br>
+
+接下來這邊開始詳細介紹Non-Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation中 的其中一個方法Cost-Proportionate Example Weighting，其主要的架構如圖26所示
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9626.png" 
+width="550" height="300">
+  圖26
+</sub>
+</div>
+<br>
+
+Step1
+\
+將原始問題(Xn、yn、Wn)利用copy的概念，有效轉換為(Xm、Ym)的形式，而本文將介紹的方法為以下三種方法 (還有其他不同種方法 可參閱相關論文) :
+\
+\
+1.over/under-sampling with normalized wn (Elkan, 2001)  – 概念如前頁提到的例子，不再贅述
+\
+2.under-sampling by rejection (Zadrozny, 2003) 
+\
+3.modify existing algorithms equivalently (Zadrozny, 2003)
+\
+\
+Step2
+\
+用自己喜歡的演算法，對變更後的example進行分類，已得到一個好的分類器g(x)
+\
+\
+Step3
+\
+利用訓練好的分類器g(x)進行未來資料的分類
+
+### :arrow_down_small:CPEW by “Modiﬁcation”  <br>
+(step1中的3.)
+
+此方法與其他方法最大的差異在step1其餘步驟step2 step3皆相同，而其主要概念是透過修改演算法的目標函示做到Cost-Proportionate Example Weighting，如圖27可知 SVM的目標涵是為regulation part  1/2(w、w) + hinge loss part ∑_(n=1)^N▒〖C ξn〗 ，前面介紹的方法可知，我們在解original problem時是給予每個example一個若發生分類錯誤的weight，但CPEW by Modiﬁcation的方法是直接更改目標函式變成1/2(w、w) + ∑_(n=1)^N▒〖C Wn ξn〗，換句話說也就是直接修改每個example的權重w
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9627.png" 
+width="390" height="120">
+  圖27
+</sub>
+</div>
+<br>
+
+---
+
+<br>
+<div align=center>
+  (利用人工資料實作 並以圖形說明 且以supermarket為例)
+</div>
+<br>
