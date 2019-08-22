@@ -196,3 +196,33 @@ width="420" height="120">
 \
 ※Regular Binary Classiﬁcation是Class-Weighted Cost-Sensitive Binary Classiﬁcation的特例 (W+ W-為1時)
 
+:bulb: __Q2 : 以supermarket為例，若除了忠誠及不忠誠的客戶外，還有超級忠誠的客戶，這下該如何是好?__ <br> 
+---------------------------------------------------------------------------------------------------
+
+圖9左表 同反例1，利用指紋辨識系統於超級市場的客戶身分辨識，但僅將客戶分成忠誠(+1)或非忠誠(-1)的類別，並且給予忠誠的客戶折扣，若此時有一個超級忠誠的客戶加入分類，Regular Binary Classiﬁcation與 Class-Weighted Cost-Sensitive Binary Classiﬁcation等方法較不適合，因此可以改用Example-Weighted Cost-Sensitive Binary Classiﬁcation而其核心概念為給予每個Example 個別的cost
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%969.0.png" 
+width="420" height="120">
+圖9      
+</sub>
+</div>
+<br>  
+
+***超級忠誠的客戶*** : 因極度不想遺失此類客戶，因此當發生error會給予一個絕對高的cost(100)
+\
+***忠誠的客戶*** : 遺失此類客戶相較於遺失超級忠誠的客戶來說較不嚴重，因此當發生error會給予一個相對高的cost (10)
+\
+***不忠誠的客戶*** : 此時對於不忠誠的客戶來講反而會因為無緣無故得到折扣而更開心，反倒是supermarket會有些微的損失cost(1)
+
+
+:bulb: __A2 : Regular Binary Classiﬁcation與 Class-Weighted Cost-Sensitive Binary Classiﬁcation都是用不同類別來進行分類，若希望可以觀察不同example的特性來進行分類可以使用接下來要介紹的Example-Weighted Cost-Sensitive Binary Classiﬁcation__ <br>
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
