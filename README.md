@@ -13,7 +13,7 @@
 
 <br>
 <div align=center>
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%96.png"
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%96.png"
 width="300" height="150">
 </div>
 <br>
@@ -24,7 +24,7 @@ width="300" height="150">
 <br>
 <div align=center>
 <sub> 
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%961.png " 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%961.png " 
 width="360" height="90">
 圖1 
 </sub>
@@ -50,7 +50,7 @@ width="360" height="90">
 <br>
 <div align=center>
 <sub> 
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%962.png" 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%962.png" 
 width="360" height="90">
 圖2 
 </sub>
@@ -73,7 +73,7 @@ width="360" height="90">
 <br>
 <div align=center>
 <sub> 
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%963.png" 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%963.png" 
 width="360" height="90">
 圖3 
 </sub>
@@ -111,7 +111,7 @@ testing:    把training 後的目標函數, 拿去應用在現實例子中
 <br>
 <div align=center>
 <sub> 
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%964.png" 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%964.png" 
 width="360" height="150">
 圖4 
   
@@ -136,7 +136,7 @@ width="360" height="150">
 <br>
 <div align=center>
 <sub> 
-<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/%E5%9C%965.png" 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%965.png" 
 width="150" height="140">
 圖5)
 </sub>
