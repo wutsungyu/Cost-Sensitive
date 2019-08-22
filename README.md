@@ -562,7 +562,6 @@ width="390" height="120">
 <br>
 
 ---
-
 <br>
 <div align=center>
   (利用人工資料實作 並以圖形說明 且以supermarket為例)
