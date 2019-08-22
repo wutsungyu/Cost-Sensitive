@@ -432,17 +432,35 @@ Setep2
 \
 利用approximately good分類器g(x)進行分類，其中根據不同特性題目，分類器g(x)的門檻 (W-)/(W+ + W-) 會有所改變
 
+### :arrow_down_small:Key Idea: ABOD on Artiﬁcial Data <br>
+(利用人工資料實作 並以圖形說明 且以supermarket為例)
 
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9619.20.21.22.png" 
+width="680" height="600">
+</sub>
+</div>
+<br>
 
+圖19 中的每個標記都為一個example，而其中圓圈為example分類在+1類別，叉為example分類在-1類別。接著針對每個example利用logistic regression, Naïve Bayes, ...等方法估計其應該被分類在+1 or -1 類別的機率，如圖20所示，越深藍色代表有越高的機率分在+1類別，反之則有越高的機率分在-1類別，接著會用此機率進行分類(g(x) = +1；p(x) > (W-)/(W+ + W-))。
 
+接下來可以看到圖21為使用regular分類方法分出來的結果。圖22為利用ABOD分出來的結果，可以看到使用ABOD可以將+1類別分得更乾淨，也就是將supermarket中，將真的是忠誠客戶的example用更嚴謹的方式分類，以避免False reject error發生
 
+### :arrow_down_small:Pros and Cons of ABOD <br>
 
+***Pros***
+\
+1.)optimal : 若估計P( -1 | X )與P( +1 | X )的P( X )、1 - P( X )是準的則能夠得到一個optimal的結果
+\
+2.)simple : 做法簡單，在training中僅須利用logistic regression, Naïve Bayes, ...等方法估計每個樣本分在+1 or-1 類別的機率，在預測階段僅需根據不同特性的題目調整threshold( (W-)/(W+ + W-)  )
 
-
-
-
-
-
+***Cons***
+\
+1.)	difﬁcult : 得到一個好的機率估計往往比得到一個好的二元分類器來的困難
+\
+2.)	restricted : 我們會需要已知的W+W-來計算threshold，因此會需要一張完整的cost matrix 表
 
 
 
