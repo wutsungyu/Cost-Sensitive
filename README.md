@@ -433,7 +433,12 @@ Setep2
 利用approximately good分類器g(x)進行分類，其中根據不同特性題目，分類器g(x)的門檻 (W-)/(W+ + W-) 會有所改變
 
 ### :arrow_down_small:Key Idea: ABOD on Artiﬁcial Data <br>
-(利用人工資料實作 並以圖形說明 且以supermarket為例)
+
+<br>
+<div align=center>
+  (利用人工資料實作 並以圖形說明 且以supermarket為例)
+</div>
+<br>
 
 <br>
 <div align=center>
@@ -567,3 +572,44 @@ width="390" height="120">
   (利用人工資料實作 並以圖形說明 且以supermarket為例)
 </div>
 <br>
+
+圖28可以看到原始問題經過CPEW by Modiﬁcation的方法後，+1類別原本為小圓圈，修改了example的權重(W)後，由小圓圈變成了大圓圈，接著再利用二元分類器進行分類(圖28右下)會發現分的比用regular方法分類來的好
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9628.png" 
+width="550" height="350">
+  圖28
+</sub>
+</div>
+<br>
+
+### :arrow_down_small:CPEW by “Rejection Sampling”  <br>
+(step1中的2.)
+
+此方法做Step1時的主要概念是會賦予每個樣本一個隨機數值，且會設定一個threshold(這例子中為一個nomalized weight)，若樣本賦予的隨機值低於設定的threshold，則我們會將該example取出放入訓練集中，反之若隨機值大於threshold則拒絕，因此我們會得到一個比原資料集少的新資料集，接著Step2我們會用新的資料集進行分類，過程中會得到一個弱分類器，重複做Step1、Step2的步驟，最終Step將所有弱分類器組合起來會得到一個集合分類器，流程如圖29所示
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9629.png" 
+width="550" height="300">
+  圖29
+</sub>
+</div>
+<br>
+
+---
+
+Non-Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation中介紹的方法，其使用時建議 :
+\
+white box :
+若使用者非常清楚演算法的細節，且該演算法中具有可以調整權重的項目則建議使用CPEW by “Modiﬁcation”的方法
+\
+black box : 
+若使用者不了解演算法的細節，或該演算法中不具有調整參數的項目則建議使用CPEW by “Rejection Sampling”的方法
+
+
+
+
