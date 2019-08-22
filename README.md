@@ -221,8 +221,68 @@ width="420" height="120">
 :bulb: __A2 : Regular Binary Classiﬁcation與 Class-Weighted Cost-Sensitive Binary Classiﬁcation都是用不同類別來進行分類，若希望可以觀察不同example的特性來進行分類可以使用接下來要介紹的Example-Weighted Cost-Sensitive Binary Classiﬁcation__ <br>
 ---------------------------------------------------------------------------------------------------
 
+## :arrow_down_small:“Example-Weighted Cost-Sensitive” Binary Classiﬁcation:  <br>
 
+由Q2 到A2的過程中，可知若有許多不同example而不是單純的兩個類別時，觀察每個example下所可能發生的error，也就是利用各別example的特性(cost vector)進行分類較合理，經常使用Example-Weighted Cost-Sensitive Binary Classiﬁcation，而其中in-sample error、out-of-sample error 的計算方法如 圖10所示:
 
+(以下範例是以supermarket擴充版案例的cost matrix 協助說明)
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%969.1.png" 
+width="150" height="140">      
+</sub>
+</div>
+<br>  
+---
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%9610.png" 
+width="360" height="150">
+圖10 
 
+</sub>
+</div>
+<br> 
 
+由上述公式可知:
+\
+1.)在supermarket的擴充案例中，不同example會有不同的cost vector，將所有實際值不等於預測值情況下的cost(Wn)加總並除上樣本數，即為In sample error的計算方式( Eg  y=big customer  h(x)=-1  ； cost = 100 )
+\
+2.) 在supermarket的擴充案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，不同example會有不同的cost vector，把所有不相等情況的cost(Wn)加總，即為out-of sample error的計算方式 (此時不用除N因為……?????????????????)
 
+## :arrow_down_small :Example-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下: <br>
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%9611.png" 
+width="420" height="120">
+圖11 
+
+</sub>
+</div>
+<br> 
+
+投入N的樣本，每個樣本為一個input Xn 及 label  Yn  
+並且給予不同example 的error不同的權重 Wn 
+
+---
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%9612.png" 
+width="420" height="120">
+圖12 
+
+</sub>
+</div>
+<br>
+
+我們希望利用每個example的cost vector這些額外資訊，在未知的資料得到一個很低的out-of-sample error，同時使的分類器g(x)在將所有樣本分類時可以獲得最小的cost，因而做出最佳決策
+\
+※Regular Binary Classiﬁcation是Class-Weighted Cost-Sensitive Binary Classiﬁcation的特例 (W+ W-為1時)
+\
+※Class-Weighted Cost-Sensitive Binary Classiﬁcation是Example-Weighted Cost-Sensitive Binary Classiﬁcation的特例 (當只有兩個example時，且那兩個example一個為 +1類別 另一個為-1類別)
