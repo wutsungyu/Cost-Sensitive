@@ -95,7 +95,7 @@ width="360" height="90">
 ---------------------------------------------------------------------------------------------------
 
 
-@## :arrow_down_small: “Regular” Binary Classiﬁcation <br>
+### :arrow_down_small: “Regular” Binary Classiﬁcation <br>
 在機器學習裡面,有一個很重要的概念,叫做training 和 testing
 
 training:  我們利用已有的資料來訓練模型,進而得到目標函數
@@ -128,7 +128,7 @@ width="360" height="150">
 ????????????????)
 
 
-@## :arrow_down_small: “Class-Weighted Cost-Sensitive” Binary Classiﬁcation <br> 
+### :arrow_down_small: “Class-Weighted Cost-Sensitive” Binary Classiﬁcation <br> 
 **(Class-Weighted : 不同的y 下所產生的weight是不同的)**
 
 由Q1 到A1的過程中，可以得知加入懲罰(cost)較為合理，因此當error背後的重要性不同時，較推薦使用Class-Weighted Cost-Sensitive Binary Classiﬁcation，而其中in-sample error、out-of-sample error 的計算方法如 圖6所示:
