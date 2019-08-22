@@ -338,10 +338,47 @@ P( -1 | X ) : 真實y為-1類別，其在某個example下所可能發生的機�
 
 因此W- 與 P( -1 | X ) 相乘 即為expected error for predicting +1 on x
 
-
+<br>
 <div align=right>
 <sub> 
 <img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9614.1.png" 
 width="120" height="90">
 </sub>
 </div>
+<br>
+
+---
+
+在Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation的核心，是運用到一種Bayes optimal的分類器，如圖15所示
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9615.png" 
+width="350" height="100">
+圖15 
+  
+     Sign : 若括號中的值大於1其sign=1；反之則sign=-1 (此例直接將+1、-1當成類別) Eg : sign(156)=1 ；sign(-12)=-1
+</sub>
+</div>
+<br>  
+
+Bayes optimal分類器g*(x)的作法是將expected error for predicting +1 on x 與expected error for predicting -1 on x 拿來比大小，若W- × P( -1 | X )大於W+ × P( +1 | X )則將該樣本分在+1類，反之則分在-1類
+
+---
+
+但一般來講通常P( -1 | X )與P( +1 | X )都是未知的，所以可有用機器學習中常見的logistic regression, Naïve Bayes, ...等方法進行估計，估計後如圖?所示，可以到一個approximately good分類器g(x)
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9616.png" 
+width="350" height="100">
+圖16
+</sub>
+</div>
+<br>  
+
+若W- × p( X )大於W+ ×  (1-p( X) )則將該樣本分在+1類，反之則分在-1類
+
+### :arrow_down_small:Key Idea: Approximate Bayes-Optimal Decision <br>
