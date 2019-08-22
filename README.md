@@ -67,7 +67,7 @@ width="360" height="90">
 以客戶的感覺來看 當指紋辨識機犯下False reject error會比犯下False accept error來的嚴重，因此可以看到圖2的右表，此時會給予較不想發生的False reject error 一個較高的懲罰(cost)10，而對角線的Cost皆為0因其分類是正確的
 
 
-## :arrow_down_small: Fingerprint Veriﬁcation for CIA  (反例2) <br>
+### :arrow_down_small: Fingerprint Veriﬁcation for CIA  (反例2) <br>
 此例是將指紋辨識系統用於CIA員工登錄確認系統中，會將登入者分成CIA探員(+1)與侵入者(-1)的兩個類別此例子是將指紋辨識系統用於超級市場的客戶身分辨識，會將客戶分成忠誠(+1)或非忠誠(-1)的類別，並且會給予忠誠的客戶折扣 
 
 <br>
@@ -95,7 +95,7 @@ width="360" height="90">
 ---------------------------------------------------------------------------------------------------
 
 
-## :arrow_down_small: “Regular” Binary Classiﬁcation <br>
+@## :arrow_down_small: “Regular” Binary Classiﬁcation <br>
 在機器學習裡面,有一個很重要的概念,叫做training 和 testing
 
 training:  我們利用已有的資料來訓練模型,進而得到目標函數
@@ -128,7 +128,7 @@ width="360" height="150">
 ????????????????)
 
 
-## :arrow_down_small: “Class-Weighted Cost-Sensitive” Binary Classiﬁcation <br> 
+@## :arrow_down_small: “Class-Weighted Cost-Sensitive” Binary Classiﬁcation <br> 
 **(Class-Weighted : 不同的y 下所產生的weight是不同的)**
 
 由Q1 到A1的過程中，可以得知加入懲罰(cost)較為合理，因此當error背後的重要性不同時，較推薦使用Class-Weighted Cost-Sensitive Binary Classiﬁcation，而其中in-sample error、out-of-sample error 的計算方法如 圖6所示:
@@ -166,7 +166,7 @@ width="350" height="200">
 ????????????????)
 
 
-## :arrow_down_small: Class-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下: <br>
+### :arrow_down_small: Class-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下: <br>
 
 <br>
 <div align=center>
@@ -225,7 +225,7 @@ width="420" height="120">
 :bulb: __A2 : Regular Binary Classiﬁcation與 Class-Weighted Cost-Sensitive Binary Classiﬁcation都是用不同類別來進行分類，若希望可以觀察不同example的特性來進行分類可以使用接下來要介紹的Example-Weighted Cost-Sensitive Binary Classiﬁcation__ <br>
 ---------------------------------------------------------------------------------------------------
 
-## :arrow_down_small:“Example-Weighted Cost-Sensitive” Binary Classiﬁcation:  <br>
+### :arrow_down_small:“Example-Weighted Cost-Sensitive” Binary Classiﬁcation:  <br>
 
 由Q2 到A2的過程中，可知若有許多不同example而不是單純的兩個類別時，觀察每個example下所可能發生的error，也就是利用各別example的特性(cost vector)進行分類較合理，經常使用Example-Weighted Cost-Sensitive Binary Classiﬁcation，而其中in-sample error、out-of-sample error 的計算方法如 圖10所示:
 
@@ -259,7 +259,7 @@ width="360" height="150">
 2.) 在supermarket的擴充案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，不同example會有不同的cost vector，把所有不相等情況的cost(Wn)加總，即為out-of sample error的計算方式 (此時不用除N因為……?????????????????)
 
 
-## :arrow_down_small:Example-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下:  <br>
+### :arrow_down_small:Example-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下:  <br>
 
 <br>
 <div align=center>
@@ -291,9 +291,57 @@ width="420" height="120">
 我們希望利用每個example的cost vector這些額外資訊，在未知的資料得到一個很低的out-of-sample error，同時使的分類器g(x)在將所有樣本分類時可以獲得最小的cost，因而做出最佳決策
 \
 \
-\
-\
 ※Regular Binary Classiﬁcation是Class-Weighted Cost-Sensitive Binary Classiﬁcation的特例 (W+ W-為1時)
 \
 \
 ※Class-Weighted Cost-Sensitive Binary Classiﬁcation是Example-Weighted Cost-Sensitive Binary Classiﬁcation的特例 (當只有兩個example時，且那兩個example一個為 +1類別 另一個為-1類別)
+
+
+## :black_nib: Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation
+
+### :arrow_down_small:Key Idea: Conditional Probability Estimator  <br>
+
+Bayesian Perspective of Cost-Sensitive Binary Classiﬁcation 的目標與前面介紹的分類法都一樣，希望分類器g(x)將所有未知example分類後可以得到一個最小的cost
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%9613.png" 
+width="420" height="90">
+圖13 
+
+</sub>
+</div>
+<br>
+
+---
+
+而其中會運用到圖14所介紹的expected error for predicting，其概念與期望值雷同
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/cost-sensitive/blob/master/pic/%E5%9C%9614.0.png" 
+width="420" height="90">
+圖14 
+
+</sub>
+</div>
+<br>
+
+
+Eg : expected error for predicting +1 on x  =  W- × P( -1 | X )
+
+W- :因是二元分類問題，預測h(x)為+1情況下，可能發生的error其真實y類別一定為-1類別(藍色圈)
+
+P( -1 | X ) : 真實y為-1類別，其在某個example下所可能發生的機率為P( -1 | X ) (紅色圈)
+
+因此W- 與 P( -1 | X ) 相乘 即為expected error for predicting +1 on x
+
+
+<div align=right>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/%E5%9C%9614.1.png" 
+width="120" height="90">
+</sub>
+</div>
