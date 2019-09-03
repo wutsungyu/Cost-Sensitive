@@ -767,6 +767,16 @@ print("cost_loss=" , cost_loss(y_test, y_pred_rf, cost_mat_test))
 print('F1_score  =     {:.8f}'.format(2*(((tp/(tp+fp))*(tp/(tp+fn)))/((tp/(tp+fp))+(tp/(tp+fn))))))
 ```
 
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/randomforest.jpg" 
+width="300" height="500">
+</sub>
+</div>
+<br>
+
+
 ### :arrow_down_small: CostSensitiveRandomForestClassifier <br>
 
 ```python
@@ -909,6 +919,16 @@ print("savings_score=" , savings_score(y_test, y_pred_rf_cslr, cost_mat_test))
 print("cost_loss=" , cost_loss(y_test, y_pred_rf_cslr, cost_mat_test))
 print('F1_score  =     {:.8f}'.format(2*(((tp/(tp+fp))*(tp/(tp+fn)))/((tp/(tp+fp))+(tp/(tp+fn))))))
 ```
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/costsensitive%20randomforest.jpg" 
+width="300" height="500">
+</sub>
+</div>
+<br>
+
 
 
 ## :black_nib: Reference <br>
