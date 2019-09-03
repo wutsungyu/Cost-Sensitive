@@ -943,5 +943,9 @@ Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.h
 
 
 ## :black_nib: Package 使用參考 <br>
-- [costcla](http://albahnsen.github.io/CostSensitiveClassification/index.html)(https://boostedml.com/2019/07/handling-imbalanced-classification-datasets-in-python-choice-of-classifier-and-cost-sensitive-learning.html)
+- [costcla]
+
+(http://albahnsen.github.io/CostSensitiveClassification/index.html)
+
+(https://boostedml.com/2019/07/handling-imbalanced-classification-datasets-in-python-choice-of-classifier-and-cost-sensitive-learning.html)
 
