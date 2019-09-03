@@ -941,3 +941,7 @@ width="300" height="500">
 - [Wu, Min-You, Cost-Sensitive Classification:
 Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.handout.pdf)
 
+
+## :black_nib: Package 使用參考 <br>
+- [costcla](http://albahnsen.github.io/CostSensitiveClassification/index.html)
+
