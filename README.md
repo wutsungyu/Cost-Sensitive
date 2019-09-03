@@ -611,6 +611,12 @@ black box :
 若使用者不了解演算法的細節，或該演算法中不具有調整參數的項目則建議使用CPEW by “Rejection Sampling”的方法
 
 
+
+## :black_nib: 實作 <br>
+資料來源 : kaggla -- Credit Card Fraud Detection
+- (https://www.kaggle.com/mlg-ulb/creditcardfraud)
+
+
 ### :arrow_down_small: RandomForestClassifier <br>
 
 ```python
