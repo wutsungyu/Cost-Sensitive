@@ -633,22 +633,9 @@ from sklearn.metrics import confusion_matrix, classification_report, roc_curve, 
 from costcla.metrics import savings_score, cost_loss
 import itertools
 import sys
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-import random
 import seaborn as sns
-import warnings
-import matplotlib.pyplot as plt 
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import StratifiedKFold, train_test_split
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, roc_auc_score
-import itertools
-import sys
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
-from costcla.metrics import cost_loss, savings_score
 from costcla.models import CostSensitiveLogisticRegression, CostSensitiveDecisionTreeClassifier,CostSensitiveRandomForestClassifier
 
 
