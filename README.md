@@ -925,7 +925,7 @@ width="300" height="500">
 
 
 ## :black_nib: Reference <br>
-- [Wu, Min-You, Cost-Sensitive Classification:
+- [Hsuan-Tien Lin, Cost-Sensitive Classification:
 Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.handout.pdf)
 
 
