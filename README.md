@@ -611,6 +611,12 @@ black box :
 若使用者不了解演算法的細節，或該演算法中不具有調整參數的項目則建議使用CPEW by “Rejection Sampling”的方法
 
 
+
+## :black_nib: 實作 <br>
+資料來源 : kaggla -- Credit Card Fraud Detection
+- (https://www.kaggle.com/mlg-ulb/creditcardfraud)
+
+
 ### :arrow_down_small: RandomForestClassifier <br>
 
 ```python
@@ -627,22 +633,9 @@ from sklearn.metrics import confusion_matrix, classification_report, roc_curve, 
 from costcla.metrics import savings_score, cost_loss
 import itertools
 import sys
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-import random
 import seaborn as sns
-import warnings
-import matplotlib.pyplot as plt 
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import StratifiedKFold, train_test_split
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, roc_auc_score
-import itertools
-import sys
 from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
-from costcla.metrics import cost_loss, savings_score
 from costcla.models import CostSensitiveLogisticRegression, CostSensitiveDecisionTreeClassifier,CostSensitiveRandomForestClassifier
 
 
@@ -766,6 +759,16 @@ print("savings_score=" , savings_score(y_test, y_pred_rf, cost_mat_test))
 print("cost_loss=" , cost_loss(y_test, y_pred_rf, cost_mat_test))
 print('F1_score  =     {:.8f}'.format(2*(((tp/(tp+fp))*(tp/(tp+fn)))/((tp/(tp+fp))+(tp/(tp+fn))))))
 ```
+
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/randomforest.jpg" 
+width="300" height="500">
+</sub>
+</div>
+<br>
+
 
 ### :arrow_down_small: CostSensitiveRandomForestClassifier <br>
 
@@ -910,8 +913,26 @@ print("cost_loss=" , cost_loss(y_test, y_pred_rf_cslr, cost_mat_test))
 print('F1_score  =     {:.8f}'.format(2*(((tp/(tp+fp))*(tp/(tp+fn)))/((tp/(tp+fp))+(tp/(tp+fn))))))
 ```
 
+<br>
+<div align=center>
+<sub> 
+<img src="https://github.com/wutsungyu/Cost-Sensitive/blob/master/pic/costsensitive%20randomforest.jpg" 
+width="300" height="500">
+</sub>
+</div>
+<br>
+
+
 
 ## :black_nib: Reference <br>
-- [Wu, Min-You, Cost-Sensitive Classification:
+- [Hsuan-Tien Lin, Cost-Sensitive Classification:
 Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.handout.pdf)
+
+
+## :black_nib: Package 使用參考 <br>
+- [costcla]
+
+(http://albahnsen.github.io/CostSensitiveClassification/index.html)
+
+(https://boostedml.com/2019/07/handling-imbalanced-classification-datasets-in-python-choice-of-classifier-and-cost-sensitive-learning.html)
 
