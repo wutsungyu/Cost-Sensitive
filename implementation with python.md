@@ -1,5 +1,5 @@
 #  Python實作 <br>
-資料來源 : [kaggla -- Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+資料來源 : [kaggle -- Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
 * Cost classification loss.
 
