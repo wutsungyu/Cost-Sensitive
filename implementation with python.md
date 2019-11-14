@@ -1,6 +1,5 @@
-## :black_nib: 實作 <br>
-資料來源 : kaggla -- Credit Card Fraud Detection
-- (https://www.kaggle.com/mlg-ulb/creditcardfraud)
+#  Python實作 <br>
+資料來源 : [kaggla -- Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
 * Cost classification loss.
 
@@ -322,7 +321,7 @@ Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.h
 
 
 ## :black_nib: Package 使用參考 <br>
-- [costcla]
+### costcla
 
 (http://albahnsen.github.io/CostSensitiveClassification/index.html)
 
