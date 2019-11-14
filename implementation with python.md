@@ -1,12 +1,17 @@
 #  Python實作 <br>
 資料來源 : [kaggle -- Credit Card Fraud Detection](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 
+
+## :black_nib: 衡量指標 <br>
 * Cost classification loss.
 
 This function calculates the cost of using y_pred on y_true with cost-matrix cost-mat. It differ from traditional classification evaluation measures since measures such as accuracy asing the same cost to different errors, but that is not the real case in several real-world classification problems as they are example-dependent cost-sensitive in nature, where the costs due to misclassification vary between examples.
 * Savings score.
 
 This function calculates the savings cost of using y_pred on y_true with cost-matrix cost-mat, as the difference of y_pred and the cost_loss of a naive classification model.
+
+* F1 score
+
 
 ### :arrow_down_small: RandomForestClassifier <br>
 
@@ -313,7 +318,7 @@ width="300" height="500">
 </div>
 <br>
 
-
+#  由上述結果可以發現加入cost sensitive 會使結果較好 <br>
 
 ## :black_nib: Reference <br>
 - [Hsuan-Tien Lin, Cost-Sensitive Classification:
@@ -321,7 +326,7 @@ Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.h
 
 
 ## :black_nib: Package 使用參考 <br>
-### costcla
+### Costcla
 
 (http://albahnsen.github.io/CostSensitiveClassification/index.html)
 
