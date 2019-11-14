@@ -260,7 +260,7 @@ width="360" height="150">
 \
 1.)在supermarket的擴充案例中，不同example會有不同的cost vector，將所有實際值不等於預測值情況下的cost(Wn)加總並除上樣本數，即為In sample error的計算方式( Eg  y=big customer  h(x)=-1  ； cost = 100 )
 \
-2.) 在supermarket的擴充案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，不同example會有不同的cost vector，把所有不相等情況的cost(Wn)加總，即為out-of sample error的計算方式 (此時不用除N因為……?????????????????)
+2.) 在supermarket的擴充案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，不同example會有不同的cost vector，把所有不相等情況的cost(Wn)加總，即為out-of sample error的計算方式 
 
 
 ### :arrow_down_small:Example-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下:  <br>
