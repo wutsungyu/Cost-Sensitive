@@ -12,10 +12,10 @@
 ## § Introduction
 |更新時間|文章|
 |---|---|
-|2019|[cost_sensitive Introduction](https://github.com/wutsungyu/Cost-Sensitive/blob/master/introduction.md)|
+|2019|[cost sensitive Introduction](https://github.com/wutsungyu/Cost-Sensitive/blob/master/introduction.md)|
 
 ## § Implementation with Python
 
 |更新時間|文章|
 |---|---|
-|2019|[cost_sensitive Implementation](https://github.com/wutsungyu/Cost-Sensitive/blob/master/implementation%20with%20python.md)|
+|2019|[cost sensitive Implementation](https://github.com/wutsungyu/Cost-Sensitive/blob/master/implementation%20with%20python.md)|
