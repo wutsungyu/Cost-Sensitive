@@ -1,7 +1,14 @@
 # Cost-Sensitive
-*[POLab](http://polab.imis.ncku.edu.tw/)* <br>
 
-<br>
+*[POLab](http://polab.imis.ncku.edu.tw/)*
+
+
+*筆者:[wutsungyu](www.linkedin.com/in/wutsungyu)*
+
+*內容來自: [Hsuan-Tien Lin, Cost-Sensitive Classification:
+Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.handout.pdf)*
+
+
 
 ## :black_nib: Cost-Sensitive Binary Classiﬁcation
 --------------------------------------------
