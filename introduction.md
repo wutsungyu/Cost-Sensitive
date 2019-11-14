@@ -621,7 +621,7 @@ Algorithms and Advances](https://www.csie.ntu.edu.tw/~htlin/talk/doc/cs.acml13.h
 
 
 ## :black_nib: Package 使用參考 <br>
-- [costcla]
+### Costcla
 
 (http://albahnsen.github.io/CostSensitiveClassification/index.html)
 
