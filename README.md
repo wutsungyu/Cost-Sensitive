@@ -124,8 +124,7 @@ width="360" height="150">
 \
 1.)利用現有的資料作訓練時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總除上樣本數，即為In sample error的計算方式
 \
-2.)利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總，即為out-of sample error的計算方式(此時不用除N因為……?
-????????????????)
+2.)利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時布林向量為1，所以把所有不相等情況的布林值加總，即為out-of sample error的計算方式
 
 
 ### :arrow_down_small: “Class-Weighted Cost-Sensitive” Binary Classiﬁcation <br> 
@@ -161,9 +160,7 @@ width="350" height="200">
 \
 1.)	supermarket案例中，當實際值不等於預測值時，會有不同的cost，因此將所有不相等情況的cost加總並除上樣本數，即為In sample error的計算方式( Eg  y=+1  h(x)=-1  ； cost = 10 )
 \
-2.)	supermarket案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，會有不同的cost，把所有不相等情況的cost加總，即為out-of sample error的計算方式 (此時不用除N因為……?
-
-????????????????)
+2.)	supermarket案例中，利用未知的資料測試目標函式是否有用時，當實際值不等於預測值時，會有不同的cost，把所有不相等情況的cost加總，即為out-of sample error的計算方式 
 
 
 ### :arrow_down_small: Class-Weighted Cost-Sensitive Binary Classiﬁcation 的通用表示如下: <br>
