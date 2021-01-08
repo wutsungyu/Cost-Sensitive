@@ -37,12 +37,7 @@ def display_summary(true,pred):
     print('specificity is %f',1.*tn/(tn+fp))
     print('accuracy is %f',1.*(tp+tn)/(tp+tn+fp+fn))
     print('balanced accuracy is %',1./2*(1.*tp/(tp+fn)+1.*tn/(tn+fp)))
-
-#print('Gaussian NB')
-#display_summary(y_test,y_pred_nb)
-
-##########################################################################
-
+    
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
                           title='Confusion matrix',
@@ -61,10 +56,6 @@ def plot_confusion_matrix(cm, classes,
     if normalize:
         cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
         print("Normalized confusion matrix")
-#    else:
-#        print('Confusion matrix, without normalization')
-
-#    print(cm)
 
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
@@ -76,8 +67,7 @@ def plot_confusion_matrix(cm, classes,
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.show()
-    
-######################################################################
+
 def show_data(cm, print_res = 0):
     tp = cm[0,0]
     fn = cm[1,0]
@@ -90,19 +80,14 @@ def show_data(cm, print_res = 0):
         print('Specificity = {:.8e}'.format(tn/(fp+tn)))
     return tp/(tp+fp), tp/(tp+fn), fp/(fp+tn)
 
-
-df = open('C:/Users/tsungyu/Downloads/creditcarddata/creditcard.csv')
-
-df = pd.read_csv(df)
-
-df.head()
-df.shape
-df.columns[df.isnull().any()].tolist() # there is no missing values in columns
-
-df = df.drop(['Time'],axis=1) # drop the Time column.since it doesn't make sense in modeling.
-
-
 np.random.seed(37)
+
+df = open('C.../creditcard.csv')
+df = pd.read_csv(df)
+df.columns[df.isnull().any()].tolist() 
+
+df = df.drop(['Time'],axis=1) 
+
 x = df.iloc[:, df.columns != 'Class']
 y = df.iloc[:, df.columns == 'Class']
 
@@ -110,31 +95,27 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, rando
 
 cost_mat_train = np.zeros((len(y_train),4))
 
-#false positives cost 5
+#false positives cost
 cost_mat_train[:,0]=2
-#false negatives cost the transaction amount
+#false negatives cost 
 cost_mat_train[:,1]=x_train['Amount']
-#true positives also cost 5
+#true positives cost
 cost_mat_train[:,2]=0
+#true negatives cost
 cost_mat_train[:,3]=0
 
 cost_mat_test = np.zeros((len(y_test),4))
-
 cost_mat_test[:,0]=2
 cost_mat_test[:,1]=x_test['Amount']
 cost_mat_test[:,2]=0
 cost_mat_test[:,3]=0
 
-
-
 clf_random = RandomForestClassifier(random_state=0)
 clf_random = clf_random.fit(x_train, y_train)
 y_pred_rf = clf_random.predict(x_test)
 
-
 print('-------RandomForestClassifier------')
 display_summary(y_test,y_pred_rf)
-
 
 cm = confusion_matrix(y_test, y_pred_rf)
 tn, fp, fn, tp = confusion_matrix(y_test,y_pred_rf).ravel()
