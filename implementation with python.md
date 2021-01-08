@@ -151,8 +151,6 @@ import itertools
 from costcla.metrics import cost_loss, savings_score
 from costcla.models import CostSensitiveRandomForestClassifier
 
-
-##########################################################################
 def display_summary(true,pred):
     tn, fp, fn, tp = confusion_matrix(true,pred).ravel()  #網路資料版
     print('confusion matrix')
@@ -161,11 +159,6 @@ def display_summary(true,pred):
     print('specificity is %f',1.*tn/(tn+fp))
     print('accuracy is %f',1.*(tp+tn)/(tp+tn+fp+fn))
     print('balanced accuracy is %',1./2*(1.*tp/(tp+fn)+1.*tn/(tn+fp)))
-
-#print('Gaussian NB')
-#display_summary(y_test,y_pred_nb)
-
-##########################################################################
 
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
@@ -185,11 +178,7 @@ def plot_confusion_matrix(cm, classes,
     if normalize:
         cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
         print("Normalized confusion matrix")
-#    else:
-#        print('Confusion matrix, without normalization')
-
-#    print(cm)
-
+        
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         plt.text(j, i, cm[i, j],
@@ -200,8 +189,7 @@ def plot_confusion_matrix(cm, classes,
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.show()
-    
-######################################################################
+   
 def show_data(cm, print_res = 0):
     tp = cm[0,0]
     fn = cm[1,0]
@@ -226,24 +214,13 @@ y = df_credit[col_names[-1]]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-
-
-
 cost_mat_train = np.zeros((len(y_train),4))
-#X_train['Amount']=abs(X_train['Amount']-5) ###############!!!!!!
-
-#false positives cost 5
 cost_mat_train[:,0]=2
-#false negatives cost the transaction amount
 cost_mat_train[:,1]=250
-#true positives also cost 5
 cost_mat_train[:,2]=0
 cost_mat_train[:,3]=0
 
-
-
 cost_mat_test = np.zeros((len(y_test),4))
-
 cost_mat_test[:,0]=2
 cost_mat_test[:,1]=250
 cost_mat_test[:,2]=0
@@ -257,15 +234,11 @@ y_pred_rf_cslr=g.predict(np.array(X_test))
 print('--------CostSensitiveRandomForestClassifier------')
 display_summary(y_test,y_pred_rf_cslr)
 
-
-
-
 cm = confusion_matrix(y_test, y_pred_rf_cslr)
 tn, fp, fn, tp = confusion_matrix(y_test,y_pred_rf_cslr).ravel()
 
 plot_confusion_matrix(cm, ['0', '1'], )
 pr, tpr, fpr = show_data(cm, print_res = 1);
-
 
 # Savings using only RandomForest
 print("savings_score=" , savings_score(y_test, y_pred_rf_cslr, cost_mat_test))
